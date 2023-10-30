@@ -1,0 +1,18 @@
+// Загрузить функцию getItems()
+function getItems() {
+  // Получить все item_id из data layer
+  var itemIds = google_tag_manager['container id'].dataLayer.get("items");
+
+  // Преобразовать itemIds в массив
+  var itemsArray = Array.from(itemIds);
+
+  // Склеить item_id в 1 строку
+  var itemsString = itemsArray.map(function(item) {
+    return item.item_id;
+  }).join(",");
+
+  // Вернуть itemsString
+  return itemsString;
+}
+
+// Код переменной
